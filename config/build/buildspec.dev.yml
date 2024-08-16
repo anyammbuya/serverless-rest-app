@@ -19,6 +19,7 @@ phases:
       - npm test
       - echo packaging the service
       - aws secretsmanager get-secret-value --secret-id "dev/notes/serverlesskey" --query SecretString --output text --region us-east-1 > access_key.txt
+      - cat access_key.txt
       - export SERVERLESS_ACCESS_KEY=$(cat access_key.txt)
       - serverless package --package my-artifact --stage dev
    
