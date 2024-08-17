@@ -22,7 +22,6 @@ phases:
       #- cat access_key.txt
       #- export SERVERLESS_ACCESS_KEY=$(cat access_key.txt)
       - serverless config credentials --provider aws --key AKgCUYvHCMhW5zPL5FrlzqVJP87hsKwFKP3nmSG0qBdH2 --overwrite
-      - echo $SERVERLESS_ACCESS_KEY
       - serverless package --package my-artifact --stage dev
    
 artifacts:
