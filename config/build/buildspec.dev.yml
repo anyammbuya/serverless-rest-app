@@ -15,8 +15,7 @@ phases:
   
   
   pre_build:
-    on-failure: ABORT
-	  commands:
+    commands:
 			- echo "Retrieving Serverless Framework access key from Secrets Manager..."
 			- export SERVERLESS_ACCESS_KEY=$(awssecretsmanager get-secret-value --secret-id "dev/notes/serverlesskey" --query SecretString --output text--regionus-east-1 | jq .serverlesssecret)
 			- echo "Serverless access key retrieved successfully." 
