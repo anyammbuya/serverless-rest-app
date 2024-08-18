@@ -25,7 +25,7 @@ phases:
       - export AWS_SECRET_ACCESS_KEY=$SERVERLESS_ACCESS_KEY
       - echo $SERVERLESS_ACCESS_KEY
 
-      - serverless package --package my-artifact --stage dev --accessKey=$SERVERLESS_ACCESS_KEY --debug
+      - serverless package --package my-artifact --stage dev --debug
    
 artifacts:
   files:
