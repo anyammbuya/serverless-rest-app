@@ -21,7 +21,10 @@ phases:
       - aws secretsmanager get-secret-value --secret-id "dev/notes/serverlesskey" --query SecretString --output text --region us-east-1 | jq .serverlesssecret > access_key.txt
       - cat access_key.txt
       - export SERVERLESS_ACCESS_KEY=$(cat access_key.txt)
+      - export AWS_ACCESS_KEY_ID=$SERVERLESS_ACCESS_KEY
+      - export AWS_SECRET_ACCESS_KEY=$SERVERLESS_ACCESS_KEY
       - echo $SERVERLESS_ACCESS_KEY
+
       - serverless package --package my-artifact --stage dev --accessKey=$SERVERLESS_ACCESS_KEY --debug
    
 artifacts:
