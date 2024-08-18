@@ -18,11 +18,9 @@ phases:
       - echo running test
       - npm test
       - echo packaging the service
-      - export SERVERLESS_ACCESS_KEY=$(aws secretsmanager get-secret-value --secret-id "dev/notes/serverlesskey" --query SecretString --output text--regionus-east-1 | jq .serverlesssecret)
-      #- aws secretsmanager get-secret-value --secret-id "dev/notes/serverlesskey" --query SecretString --output text --region us-east-1 | jq .serverlesssecret > access_key.txt
-      #- cat access_key.txt
-      #- export SERVERLESS_ACCESS_KEY=$(cat access_key.txt)
-      - echo the access key is
+      - aws secretsmanager get-secret-value --secret-id "dev/notes/serverlesskey" --query SecretString --output text --region us-east-1 | jq .serverlesssecret > access_key.txt
+      - cat access_key.txt
+      - export SERVERLESS_ACCESS_KEY=$(cat access_key.txt)
       - echo $SERVERLESS_ACCESS_KEY
       - serverless package --package my-artifact --stage dev --debug
    
