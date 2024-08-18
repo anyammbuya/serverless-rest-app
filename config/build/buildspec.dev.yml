@@ -15,15 +15,15 @@ phases:
   pre_build:
     on-failure: ABORT
 		commands:
-			-echo "Retrieving Serverless Framework access key from Secrets Manager..."
-			-export SERVERLESS_ACCESS_KEY=$(awssecretsmanager get-secret-value --secret-id "dev/notes/serverlesskey" --query SecretString --output text--regionus-east-1 | jq .serverlesssecret)
-			-echo "Serverless access key retrieved successfully." 
+			- echo "Retrieving Serverless Framework access key from Secrets Manager..."
+			- export SERVERLESS_ACCESS_KEY=$(awssecretsmanager get-secret-value --secret-id "dev/notes/serverlesskey" --query SecretString --output text--regionus-east-1 | jq .serverlesssecret)
+			- echo "Serverless access key retrieved successfully." 
 	build:
     on-failure: ABORT
 		commands:
-			-echo "Running Serverless package..."
-			-SLS_DEBUG=*serverless package --package my-artifact --stage dev
-			-echo "Serverless package completed."
+			- echo "Running Serverless package..."
+			- SLS_DEBUG=*serverless package --package my-artifact --stage dev
+			- echo "Serverless package completed."
     
   # build:
   #   on-failure: ABORT
