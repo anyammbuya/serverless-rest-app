@@ -11,7 +11,7 @@ phases:
       - npm i serverless -g
       - echo installing npm dependencies of the notes service
       - npm install
-  
+
   pre_build:
     on-failure: ABORT
 	  commands:
@@ -19,7 +19,7 @@ phases:
 			- export SERVERLESS_ACCESS_KEY=$(awssecretsmanager get-secret-value --secret-id "dev/notes/serverlesskey" --query SecretString --output text--regionus-east-1 | jq .serverlesssecret)
 			- echo "Serverless access key retrieved successfully." 
 
-	build:
+  build:
     on-failure: ABORT
 	  commands:
 			- echo "Running Serverless package..."
