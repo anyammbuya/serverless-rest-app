@@ -12,6 +12,8 @@ phases:
       - echo installing npm dependencies of the notes service
       - npm install
 
+  
+  
   pre_build:
     on-failure: ABORT
 	  commands:
