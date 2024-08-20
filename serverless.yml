@@ -1,11 +1,11 @@
 # Welcome to Serverless!
 
 service: notes-api
-frameworkVersion: '4'
+frameworkVersion: '3'
 
 provider:
   name: aws
-  runtime: nodejs20.x
+  runtime: nodejs16.x
   lambdaHashingVersion: 20201221
   stage: ${opt:stage, "dev"}
   region: us-east-1
