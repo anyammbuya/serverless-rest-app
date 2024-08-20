@@ -1,0 +1,34 @@
+version: 0.2
+
+phases:
+  install:
+    on-failure: ABORT
+    runtime-versions:
+      nodejs: 20
+      
+    commands:
+      - echo installing serverless CLI
+      - npm uninstall serverless@4.0.35
+      - npm i serverless@3.2 -g
+      - echo installing npm dependencies of the notes service
+      - npm install
+    
+  build:
+    on-failure: ABORT
+    commands:
+      - echo Deploying Resources
+      - aws secretsmanager get-secret-value --secret-id "dev/notes/serverlesskey" --query SecretString --output text --region us-east-1 | jq .serverlesssecret > access_key.txt
+      - cat access_key.txt
+      - export SERVERLESS_ACCESS_KEY=$(cat access_key.txt)
+      - echo $SERVERLESS_ACCESS_KEY
+      - serverless deploy --stage dev
+   
+artifacts:
+  files:
+    - my-artifact/*
+  name: projectartifacts
+
+cache:
+  paths:
+    - 'node_modules/**/*'
+   
