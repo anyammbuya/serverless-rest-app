@@ -21,6 +21,7 @@ phases:
       - export SERVERLESS_ACCESS_KEY=$(cat access_key.txt)
       - echo $SERVERLESS_ACCESS_KEY
       - serverless deploy --stage dev
+      - serverless remove --stage dev
    
 artifacts:
   files:
