@@ -9,9 +9,8 @@ phases:
     commands:
       - echo installing serverless CLI
       - npm uninstall serverless@4.1.7 -g
-      - npm uninstall serverless -g
       - echo Installing serverless 4...
-      - npm i serverless@4.1.7 -g
+      - npm i serverless@3.2 -g
       - echo installing npm dependencies of the notes service
       - npm install
     
