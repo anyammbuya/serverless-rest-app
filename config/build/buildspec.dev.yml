@@ -8,8 +8,6 @@ phases:
       
     commands:
       - echo installing serverless CLI
-      - npm uninstall serverless@4.1.7 -g
-      - echo Installing serverless 4...
       - npm i serverless@3.2 -g
       - echo installing npm dependencies of the notes service
       - npm install
@@ -24,7 +22,7 @@ phases:
       - cat access_key.txt
       - export SERVERLESS_ACCESS_KEY=$(cat access_key.txt)
       - echo $SERVERLESS_ACCESS_KEY
-      - serverless package --package my-artifact --stage dev --debug
+      - serverless package --package my-artifact --stage dev
    
 artifacts:
   files:
