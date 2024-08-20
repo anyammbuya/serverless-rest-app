@@ -1,7 +1,7 @@
 # Welcome to Serverless!
 
 service: notes-api
-frameworkVersion: '4'
+frameworkVersion: '3'
 
 provider:
   name: aws
