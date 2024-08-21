@@ -24,8 +24,8 @@ phases:
       - echo Deploying Resources
       # works without retrieving the serverless access key. Key is strictly required only for serverless Version 4
       #- aws secretsmanager get-secret-value --secret-id "${SECRET_NAME}" --query SecretString --output text --region us-east-1 | jq .${SECRET_VALUE} > access_key.txt
-      - export SERVERLESS_ACCESS_KEY=$(cat access_key.txt)
-      - echo $SERVERLESS_ACCESS_KEY
+      #- export SERVERLESS_ACCESS_KEY=$(cat access_key.txt)
+      #- echo $SERVERLESS_ACCESS_KEY
       - serverless deploy --stage dev
    
 artifacts:
