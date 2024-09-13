@@ -12,6 +12,8 @@ Lambda
 
 DynamoDB
 
+IAM
+
 The Diagram below shows the architecture.
 
 ![My Awesome Logo](lambda_authorizer.png)
