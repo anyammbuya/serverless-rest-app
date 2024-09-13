@@ -5,8 +5,11 @@ Authentication is setup for the API and AWS codepipeline is used for deployment.
 ## What are the resources used in this architecture?
 
 Cognito
+
 API Gateway
+
 Lambda
+
 DynamoDB
 
 The Diagram below shows the architecture.
