@@ -1,4 +1,6 @@
-# Deploying a rest API with serverless framework, use of Authentication, and codepipeline for deployment.
+# Buld and Deploy a rest API with AWS serverless services using serverless framework
+
+Authentication is setup for the API and AWS codepipeline is used for deployment.
 
 ## What are the resources used in this architecture?
 
